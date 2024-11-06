@@ -30,11 +30,11 @@
                 <label for="lenguage">Inserisci il linguaggio</label>
                 <select class="form-select form-select-lg mb-3" name="type_id" id="lenguage">
                     @foreach ( $types as $type )
-                        <option value="{{ $type->id }}">{{ $type->name }}</option>
+                        <option value="{{ old('$type->id') }}">{{ old('$type->name') }}</option>
                     @endforeach
                   </select>
                 @error("lenguage")
-                    <div class="alert alert-warning mt-2">Il nome della repo deve avere almeno 2 caratteri.</div>
+                    <div class="alert alert-warning mt-2">Il linguaggio selezionato non è valido.</div>
                 @enderror
             </div>
 

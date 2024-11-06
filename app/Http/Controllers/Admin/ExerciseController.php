@@ -90,6 +90,7 @@ class ExerciseController extends Controller
         ]);
 
         $exercise = Exercise::findOrFail($id);
+        $exercise->type_id = $exerciseData["type_id"];
         $exercise->exercise_name = $exerciseData["exercise_name"];
         $exercise->repo_name = $exerciseData["repo_name"];
         $exercise->exercise_completed = $exerciseData["exercise_completed"];
