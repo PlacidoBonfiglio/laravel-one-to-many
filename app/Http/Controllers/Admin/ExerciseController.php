@@ -86,6 +86,7 @@ class ExerciseController extends Controller
             "exercise_completed" => ["required", "boolean", "numeric"],
             "exercise_bonus" => ["required", "boolean", "numeric"],
             "date" => ["required", "date"],
+            "type_id" => ["required", "numeric", "integer", "exists:types,id"]
         ]);
 
         $exercise = Exercise::findOrFail($id);
