@@ -23,7 +23,9 @@ class ExerciseController extends Controller
      */
     public function create()
     {
-        return view("admin.exercises.create");
+        $types = Type::all();
+        $exercise = new Exercise();
+        return view("admin.exercises.create", compact("exercise", "types"));
     }
 
     /**
@@ -37,19 +39,20 @@ class ExerciseController extends Controller
             "exercise_completed" => ["required", "boolean", "numeric"],
             "exercise_bonus" => ["required", "boolean", "numeric"],
             "date" => ["required", "date"],
+            "type_id" => ["required", "numeric", "integer", "exists:types,id"]
         ]);
 
         // $exerciseData = $request->all();
 
         $exercise = new Exercise();
-        $exercise->exercise_name = $exerciseData["exercise_name"];
-        $exercise->repo_name = $exerciseData["repo_name"];
-        $exercise->exercise_completed = $exerciseData["exercise_completed"];
-        $exercise->exercise_bonus = $exerciseData["exercise_bonus"];
-        $exercise->date = $exerciseData["date"];
-        $exercise->save();
+        // $exercise->exercise_name = $exerciseData["exercise_name"];
+        // $exercise->repo_name = $exerciseData["repo_name"];
+        // $exercise->exercise_completed = $exerciseData["exercise_completed"];
+        // $exercise->exercise_bonus = $exerciseData["exercise_bonus"];
+        // $exercise->date = $exerciseData["date"];
+        // $exercise->save();
 
-        // $exercise = Exercise::create($exerciseData);
+        $exercise = Exercise::create($exerciseData);
         return redirect()->route("admin.exercises.index");
     }
 
@@ -67,8 +70,9 @@ class ExerciseController extends Controller
      */
     public function edit(string $id)
     {
+        $types = Type::all();
         $exercise = Exercise::findOrFail($id);
-        return view("admin.exercises.edit", compact("exercise"));
+        return view("admin.exercises.edit", compact("exercise", "types"));
     }
 
     /**

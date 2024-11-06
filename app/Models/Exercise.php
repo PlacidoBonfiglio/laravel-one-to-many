@@ -11,7 +11,7 @@ class Exercise extends Model
     protected $table = "exercises";
 
     protected $fillable = [
-        "exercise_name", "repo_name", "exercise_completed", "exercise_bonus", "date",
+        "exercise_name", "repo_name", "exercise_completed", "exercise_bonus", "date", "type_id"
     ];
 
     public function type() {

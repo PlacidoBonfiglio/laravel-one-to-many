@@ -27,6 +27,18 @@
             </div>
 
             <div class="col-6 m-3">
+                <label for="lenguage">Inserisci il linguaggio</label>
+                <select class="form-select form-select-lg mb-3" name="type_id" id="lenguage">
+                    @foreach ( $types as $type )
+                        <option value="{{ $type->id }}">{{ $type->name }}</option>
+                    @endforeach
+                  </select>
+                @error("lenguage")
+                    <div class="alert alert-warning mt-2">Il nome della repo deve avere almeno 2 caratteri.</div>
+                @enderror
+            </div>
+
+            <div class="col-6 m-3">
                 <label for="exercise-completed">L'esercizio è stato completato?</label>
                 <input class="form-control" type="number" min="0" max="1" value="{{ old('exercise_completed') }}" id="exercise-completed" name="exercise_completed">
                 @error("exercise_completed")
