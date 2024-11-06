@@ -13,4 +13,8 @@ class Exercise extends Model
     protected $fillable = [
         "exercise_name", "repo_name", "exercise_completed", "exercise_bonus", "date",
     ];
+
+    public function type() {
+        return $this->belongsTo(Type::class);
+    }
 }
