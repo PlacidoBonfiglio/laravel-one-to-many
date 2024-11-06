@@ -15,6 +15,9 @@
                 <span class="fw-bold">Nome repo: </span>{{$exercise->repo_name}}
             </p>
             <p>
+                <span class="fw-bold">Linguaggio: </span>{{$exercise->type->name}}
+            </p>
+            <p>
                 <span class="fw-bold">Esercizio completato: </span>{{$exercise->exercise_completed}}
             </p>
             <p>

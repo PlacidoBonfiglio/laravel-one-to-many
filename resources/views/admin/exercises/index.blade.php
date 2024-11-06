@@ -17,6 +17,7 @@
                   <th scope="col">#</th>
                   <th scope="col">Nome esercizio</th>
                   <th scope="col">Nome repo</th>
+                  <th scope="col">Linguaggio</th>
                   <th scope="col">Esercizio completato</th>
                   <th scope="col">Bonus</th>
                   <th scope="col">Data</th>
@@ -30,6 +31,7 @@
                         <th scope="row">{{ $exercise->id }}</th>
                         <td>{{ $exercise->exercise_name }}</td>
                         <td>{{ $exercise->repo_name }}</td>
+                        <td>{{ $exercise->type->name }}</td>
                         <td>{{ $exercise->exercise_completed }}</td>
                         <td>{{ $exercise->exercise_bonus }}</td>
                         <td>{{ $exercise->date }}</td>
