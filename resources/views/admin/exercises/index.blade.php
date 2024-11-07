@@ -17,7 +17,7 @@
                   <th scope="col">#</th>
                   <th scope="col">Nome esercizio</th>
                   <th scope="col">Nome repo</th>
-                  <th scope="col">Linguaggio</th>
+                  <th scope="col">Tipologia</th>
                   <th scope="col">Esercizio completato</th>
                   <th scope="col">Bonus</th>
                   <th scope="col">Data</th>

@@ -27,14 +27,14 @@
             </div>
 
             <div class="col-6 m-3">
-                <label for="lenguage">Inserisci il linguaggio</label>
-                <select class="form-select form-select-lg mb-3" name="type_id" id="lenguage">
+                <label for="type">Inserisci la tipologia</label>
+                <select class="form-select form-select-lg mb-3" name="type_id" id="type">
                     @foreach ( $types as $type )
-                        <option value="{{ old('$type->id') }}">{{ old('$type->name') }}</option>
+                        <option value="{{ $type->id }}">{{ $type->name }}</option>
                     @endforeach
                   </select>
-                @error("lenguage")
-                    <div class="alert alert-warning mt-2">Il linguaggio selezionato non è valido.</div>
+                @error("type")
+                    <div class="alert alert-warning mt-2">La tipologia selezionata non è valida.</div>
                 @enderror
             </div>
 

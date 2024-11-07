@@ -14,7 +14,7 @@ class TypeSeeder extends Seeder
     public function run(): void
     {
         $typeNames = [
-            "HTML", "CSS", "JavaScript", "PHP", "Laravel",
+            "Full-stack", "Front-end", "Back-end", "Database",
         ];
 
         foreach ( $typeNames as $name ) {
